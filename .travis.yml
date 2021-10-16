@@ -14,7 +14,7 @@ before_install:
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project playground-s-11-715deeb1
-  - gcloud config set zone us-central1-a
+  - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials cluster-1
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t duclu/react-test -f ./client/Dockerfile.dev ./client
